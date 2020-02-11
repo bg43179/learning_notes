@@ -15,7 +15,7 @@
   ```shell
   > echo 'aaaaabcd' | tr -s 'a'
   abcd
-  
+
   > echo $PATH
   /bin:/usr/sbin:/sbin
 
