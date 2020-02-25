@@ -19,7 +19,7 @@
   > echo $PATH
   /bin:/usr/sbin:/sbin
 
-  > echo $PATH | tr -d ':' '\n'
+  > echo $PATH | tr ':' '\n'
   /bin
   /usr/sbin
   /sbin
