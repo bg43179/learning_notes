@@ -51,6 +51,14 @@ end
 `yield` returns the last evaluated expression.<br/>
 In order to use value returned, need to assign it to varable, such as `value = yield(...)`
 
+## Methods
+### `map`
+```ruby
+  [1,2,3].map { |num| num.to_s }
+
+  [1,2,3].map(&:to_s)
+```
+
 ## Class
 
 ### variable
