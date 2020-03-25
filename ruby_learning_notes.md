@@ -1,11 +1,14 @@
-# Convention
- - Most of time when a method end with `!`, it means the Object which calls the method will be changed<br/>
+# Ruby Learning notes
+
+## Convention
+
 
 	`h1.merge(h2)` -> Create new object in the heap<br/>
 	`h1.merge!(h2)` -> Update h1
 
-# Class
+## Class
 
+### variable
 - **instance_var** == **instance method in Java**<br/>
 Oject needs to be created to call the method<br/>
 Use `@` sign
