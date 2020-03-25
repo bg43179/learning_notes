@@ -59,6 +59,44 @@ In order to use value returned, need to assign it to varable, such as `value = y
   [1,2,3].map(&:to_s)
 ```
 
+### `tap`
+
+  How `tap` is implemented
+  ```ruby
+  class Object
+    def tap
+      yield self
+      self
+    end
+  end
+  ```
+
+  Yield self to the block. The primary purpose of this method is to “tap into” a method chain. (Act as a temporary pipe)
+
+  ```ruby
+  (1..10).tap {|x| puts "original: #{x}" }
+    .to_a.tap { |x| puts "array:#{x}" }
+    .select {|x| x.even? }.tap {|x| puts "evens: #{x}" }
+    .map {|x| x*x }.tap {|x| puts "squares: #{x}" }
+
+  # output
+  original: 1..10
+  array:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  evens: [2, 4, 6, 8, 10]
+  squares: [4, 16, 36, 64, 100]
+  ```
+
+  It can also be used for creation
+
+  ```ruby
+  user = User.new.tap do |u|
+    u.firstname = "andrew"
+    u.firstname = "chen"
+    u.save!
+  end
+  ```
+
+  Reference: [Ruby: Tap that method](https://medium.com/aviabird/ruby-tap-that-method-90c8a801fd6a), [API Doc](https://apidock.com/ruby/Object/tap)
 ## Class
 
 ### variable
