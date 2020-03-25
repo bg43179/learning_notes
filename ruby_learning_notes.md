@@ -2,10 +2,13 @@
 
 ## Convention
 
+  - snake case for variable
+  - Most of time when a method end with `!`, it means the Object which calls the method will be changed<br/>
 
 	`h1.merge(h2)` -> Create new object in the heap<br/>
 	`h1.merge!(h2)` -> Update h1
 
+  - `module` represents the file-hierarchy `ContactInfo::Email`, can fine `email.rb` in `contact_info` directory
 ## Class
 
 ### variable
