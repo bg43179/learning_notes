@@ -1,5 +1,19 @@
 # Shell Script
 
+## Array
+
+  Initialize arry
+
+  ```bash
+  # declare variable, with a type -a array
+  declare -a arr=("command1" "command2" "command3")
+
+  for cond in "${arr[@]}"
+  do
+    ${cond}
+  done
+  ```
+
 ### Positional parameter
   - `> some_program word1 word2 word3`
 
