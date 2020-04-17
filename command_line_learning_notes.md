@@ -1,6 +1,19 @@
 # Command Line
 
 
+### `echo [-neE] [ARGUMENTS]`
+- `-e` interpert escaped-character
+- `-E` Not interpert escaped-character (by default)
+- Display output of command `echo $(command)`
+  ```bash
+  > echo "The date is: $(date +%D)"
+  The data is '04/13/2020'
+  ```
+- Display variable `echo $USER`
+  ```bash
+  Andrew Chen
+  ```
+
 ### `grep [OPTION] [COND] FILE
 
 - `-E` regex matching
