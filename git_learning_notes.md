@@ -24,10 +24,13 @@ git status -suall -- porcelain #show changed and untracked file in short and eas
 git diff --name-only --relative | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs rubocop
 ```
 
-Compare currnet branch with the sha that current branch checked out from (Only check committed c)
-```
-git diff HEAD
-git diff master...
+Compare currnet branch with the sha that current branch checked out from
+
+```bash
+git diff HEAD # Before commit
+git diff master... # After commit
+git diff master.. # This will include changes after the current branch diverge
+
 git diff master... --name-only --relative
 ```
 
@@ -35,7 +38,9 @@ git diff master... --name-only --relative
 git diff --name-only --diff-filter=ACMTUXB
 ```
 
+
 ```
-git status -suall --porcelain | awk '{print $2}' | grep '\.rb$' | xargs rubocop
-git status -suall | awk '{print $2}' | grep '\.rb$' | xargs rubocop
+git ls-files --others --exclude-standard
+git log --abbrev-commit master..
+git diff-tree --no-commit-id --name-only --relative
 ```
