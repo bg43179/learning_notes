@@ -12,18 +12,18 @@
 
 - `-s` replaces repeated characters listed in the `set1` with single occurrence
 
-  ```shell
-  > echo 'aaaaabcd' | tr -s 'a'
-  abcd
+```shell
+> echo 'aaaaabcd' | tr -s 'a'
+abcd
 
-  > echo $PATH
-  /bin:/usr/sbin:/sbin
+> echo $PATH
+/bin:/usr/sbin:/sbin
 
-  > echo $PATH | tr ':' '\n'
-  /bin
-  /usr/sbin
-  /sbin
-  ```
+> echo $PATH | tr ':' '\n'
+/bin
+/usr/sbin
+/sbin
+```
 
 - `-c` complements the set of characters in strin
 
