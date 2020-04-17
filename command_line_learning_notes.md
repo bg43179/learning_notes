@@ -1,10 +1,30 @@
 # Command Line
 
-### `grep`
+
+### `grep [OPTION] [COND] FILE
+
+- `-E` regex matching
+
+- `-s` replaces repeated characters listed in the `set1` with single occurrence
+
+- `--color` add color for matching element
 
 ### `awk`
+  ```
+  awk '{print $2}'
+  awk '{gsub(/[:]/, ".*:")} { print $1":[0-9]+"};'
+  ```
 
 ### `cut`
+  ```
+  cut -f1,2 -d':'
+  ```
+### `sed`
+  ```
+  sed 's/.$//'
+  ```
+### `xargs`
+
 
 ### `tr [OPTION] SET1 [SET2]`
 
