@@ -28,10 +28,33 @@ Andrew Chen
   awk '{ gsub(/[:]/, ".*:") } { print $1":[0-9]+"};'
   ```
 
-### `cut`
+### `cut [OPTION] [FILE]`
+  - `-f(--field)`  Select by specifying a field, a set of fields, or a range of fields, which separated by`,`. <br/>
+    Can set delimiter by using `-d`. Otherwise, it'll use `TAB` by default.
+    - `-d(--delimiter`) Specify a delimiter that will be used instead of the default `TAB` delimiter.
+    - `-s(--only-delimited`) Cut doesn’t print lines not containing delimiters.
+
+  ```bash
+  #input.txt
+  Hello World
+  Happy New World
+  World
+
+  > cut -f1 -d ' ' input.txt
+  Hello
+  Happy
+  World
+
+  > cut -f1,2 -d ' ' input.txt
+  Hello World
+  Happy New
+  World
+
+  > cut -f1 -d ' ' -s input.txt
+  Hello
+  Happy
   ```
-  cut -f1,2 -d':'
-  ```
+
 ### `sed`
   ```
   sed 's/.$//'
