@@ -5,16 +5,16 @@
 - `-e` interpert escaped-character
 - `-E` Not interpert escaped-character (by default)
 - Display output of command `echo $(command)`
-  ```bash
-  > echo "The date is: $(date +%D)"
-  The data is '04/13/2020'
-  ```
+```bash
+> echo "The date is: $(date +%D)"
+The data is '04/13/2020'
+```
 - Display variable `echo $USER`
-  ```bash
-  Andrew Chen
-  ```
+```bash
+Andrew Chen
+```
 
-### `grep [OPTION] [COND] FILE
+### `grep [OPTION] [COND] FILE`
 
 - `-E` regex matching
 
@@ -24,8 +24,8 @@
 
 ### `awk`
   ```
-  awk '{print $2}'
-  awk '{gsub(/[:]/, ".*:")} { print $1":[0-9]+"};'
+  awk '{ print $2 }'
+  awk '{ gsub(/[:]/, ".*:") } { print $1":[0-9]+"};'
   ```
 
 ### `cut`
