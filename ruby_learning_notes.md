@@ -102,8 +102,8 @@ In order to use value returned, need to assign it to varable, such as `value = y
 ### method
 - **instance_method** == **instance method in Java**<br/>
 Object needs to be created to call the method<br/>
-Use `@` sign for instance<br/>
-`@instance_variable` is used by class_method<br/>
+`@instance_variable` is used by instance_method<br/>
+Use `@` sign for instance variable<br/>
 
 - **class_method** == static method in Java<br/>
 Use `self` for class method<br/>
