@@ -99,14 +99,15 @@ In order to use value returned, need to assign it to varable, such as `value = y
   Reference: [Ruby: Tap that method](https://medium.com/aviabird/ruby-tap-that-method-90c8a801fd6a), [API Doc](https://apidock.com/ruby/Object/tap)
 ## Class
 
-### variable
-- **instance_var** == **instance method in Java**<br/>
-Oject needs to be created to call the method<br/>
-Use `@` sign
+### method
+- **instance_method** == **instance method in Java**<br/>
+Object needs to be created to call the method<br/>
+Use `@` sign for instance<br/>
+`@instance_variable` is used by class_method<br/>
 
-- **class_var** == static method in Java<br/>
-Use `self`.
-
+- **class_method** == static method in Java<br/>
+Use `self` for class method<br/>
+`@class_variable` is used by class_method<br/>
 ```ruby
 class Person
   def instance_var
@@ -130,4 +131,63 @@ bob = Person.new
 bob.say_hi # => Hi I am instance variable
 Person.say_hi # => Hi I am class variable
 ```
-## class_eval vs module_eval
+
+#### 3 ways to create class method  [Reference](http://www.railstips.org/blog/archives/2009/05/11/class-and-instance-methods-in-ruby/)
+```ruby
+# Way 1
+class Foo
+  def self.bar
+    puts 'class method'
+  end
+end
+
+# Way 2
+class Foo
+  class << self
+    def bar
+      puts 'class method'
+    end
+  end
+end
+
+# Way 3
+class Foo; end
+def Foo.bar
+  puts 'class method'
+end
+```
+Example: 
+```ruby
+module ActiveRecord
+  class Base
+    def self.validates_presence_of(...)
+      # make sure present
+    end
+  end
+end
+
+class Foo < ActiveRecord::Base
+  validates_presence_of :bar
+end
+```
+
+### instacne_eval vs class_eval vs module_eval [Reference](https://web.stanford.edu/~ouster/cgi-bin/cs142-winter15/classEval.php)
+```ruby
+# class_eval
+MyClass.class_eval do
+  def num
+    @num
+  end
+end
+
+# is the same as 
+
+class MyClass
+  def num
+    @num
+  end
+end
+```
+
+
+### Code outside of a method: [Reference](https://stackoverflow.com/questions/20414289/code-placed-outside-of-a-method)
