@@ -20,11 +20,26 @@ explored = [[0] * m for i in range(n)]
 explored = [[0]] * m
 # [[0], [0], [0], [0]] but all 0 reference to same object
 
+''' Don't do this'''
 explored = [[0] * m] * n
 # [[0,0,0,0], [0,0,0,0]]
 ```
 `[0] * m` returns a reference to a list of m zeros, but not a list. <br/>
 `*n` then creates a list of n items that all reference to the same list.
+
+### slicing
+
+### reverse array
+```python
+# slicing, create new array
+res arr[::-1]
+
+# in-place
+arr.reverse()
+
+# reversed create a iterator, list then create a new array
+result = list(reversed(arr))
+```
 
 ## Collection
   
